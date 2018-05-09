@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/page1Fragment">
+
+    <fragment
+        android:id="@+id/page1Fragment"
+        android:name="info.nkzn.myfirstnavigationeditor.Page1Fragment"
+        android:label="fragment_page1"
+        tools:layout="@layout/fragment_page1" >
+        <action
+            android:id="@+id/action_page1Fragment_to_page2Fragment"
+            app:destination="@id/page2Fragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/page2Fragment"
+        android:name="info.nkzn.myfirstnavigationeditor.Page2Fragment"
+        android:label="fragment_page2"
+        tools:layout="@layout/fragment_page2" >
+        <action
+            android:id="@+id/action_page2Fragment_to_page3Activity"
+            app:destination="@id/page3Activity" />
+        <action
+            android:id="@+id/action_page2Fragment_to_page4Fragment"
+            app:destination="@id/page4Fragment" />
+    </fragment>
+    <activity
+        android:id="@+id/page3Activity"
+        android:name="info.nkzn.myfirstnavigationeditor.Page3Activity"
+        android:label="activity_page3"
+        tools:layout="@layout/activity_page3" />
+    <fragment
+        android:id="@+id/page4Fragment"
+        android:name="info.nkzn.myfirstnavigationeditor.Page4Fragment"
+        android:label="fragment_page4"
+        tools:layout="@layout/fragment_page4" ></fragment>
+</navigation>
