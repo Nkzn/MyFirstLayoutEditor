@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 
 class Page2Fragment : Fragment() {
 
@@ -19,9 +19,17 @@ class Page2Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnGotoPage3 = view.findViewById<Button>(R.id.btn_goto_page3)
-        btnGotoPage3.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.page3Activity, null))
+        btnGotoPage3.setOnClickListener{
+            val volumeAction = Page2FragmentDirections.volumeAction()
+            volumeAction.setVolume(222)
+            it.findNavController().navigate(volumeAction)
+        }
 
         val btnGotoPage4 = view.findViewById<Button>(R.id.btn_goto_page4)
-        btnGotoPage4.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.page4Fragment, null))
+        btnGotoPage4.setOnClickListener{
+            val amountAction = Page2FragmentDirections.amountAction()
+            amountAction.setAmount(1111)
+            it.findNavController().navigate(amountAction)
+        }
     }
 }
